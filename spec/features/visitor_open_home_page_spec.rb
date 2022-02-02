@@ -9,7 +9,6 @@ feature 'Visitor open home page' do
 
     # Act
     visit root_path
-    click 'a.confirm'
 
     # Assert
     expect(page).to have_css('h1.title', text: 'Rental Cars')
