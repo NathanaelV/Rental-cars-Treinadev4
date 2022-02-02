@@ -9,10 +9,10 @@ feature 'Visitor open home page' do
 
     # Act
     visit root_path
+    click 'a.confirm'
 
     # Assert
-    expect(page).to have_content('Rental Cars')
+    expect(page).to have_css('h1.title', text: 'Rental Cars')
     expect(page).to have_content('Bem-vindo ao sistema de gestão de locação')
   end
 end
-
