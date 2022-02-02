@@ -13,4 +13,19 @@ feature 'Admin view car categories' do
     expect(page).to have_content('Top')
     expect(page).to have_content('Flex')
   end
+
+  scenario 'and view details' do
+  end
+
+  scenario 'and no car categories are created' do
+  end
+
+  scenario 'and return to home page' do
+    
+  end
+
+  scenario 'and return to manufacturers page' do
+    
+  end
 end
+
