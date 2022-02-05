@@ -7,14 +7,18 @@ feature 'Admin view car categories' do
                         third_party_insurance: 10.5)
     CarCategory.create!(name: 'Flex', daily_rate: 80, car_insurance: 8.5,
                         third_party_insurance: 8.5)
+    CarCategory.create!(name: 'Econo', daily_rate: 50, car_insurance: 8.5,
+                        third_party_insurance: 8.5)
     
     # Act -> Executa o código
     visit root_path # Boa prática começar pelo root_path
     click_on 'Categorias'
     
     # Assert -> Valida o código
+    expect(current_path).to eq car_categories_path
     expect(page).to have_content('Top')
     expect(page).to have_content('Flex')
+    expect(page).to have_content('Econo')
   end
 
   scenario 'and view details' do
