@@ -1,2 +1,5 @@
 <h1><%= @car_category.name %></h1>
-<%= @car_category.daily_rate %>
+Diária do aluguel: <%= number_to_currency @car_category.daily_rate %>
+Seguro do carro: <%= number_to_currency @car_category.car_insurance %>
+Seguro de terceiros: <%= number_to_currency @car_category.third_party_insurance %>
+
