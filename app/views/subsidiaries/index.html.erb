@@ -1,6 +1,6 @@
 <% if @subsidiaries.any? %>
   <% @subsidiaries.each do |subsidiary| %>
-    <%= link_to subsidiary.name, subsidiary_path(id: subsidiary.id) %>
+    <%= link_to subsidiary.name, subsidiary %>
   <% end %>
 <% else %>
   <%= 'Nenhuma filial cadastrada' %>
