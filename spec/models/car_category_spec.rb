@@ -36,4 +36,3 @@ describe CarCategory do
   end
 end
 
-
