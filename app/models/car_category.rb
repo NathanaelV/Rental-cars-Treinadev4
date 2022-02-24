@@ -1,4 +1,6 @@
 class CarCategory < ApplicationRecord
-  validates :name, presence: true 
+  validates :name, :daily_rate, :car_insurance, 
+            :third_party_insurance, 
+            presence: { message: 'não pode ficar em branco'} 
 end
 
