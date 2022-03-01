@@ -6,16 +6,18 @@ feature 'Admin view subsidiary' do
     Subsidiary.create!(name: 'Joao alugueis', cnpj: '123.456.789/0001-22', 
                        address: 'Rua dos bobos, n 0' )
     Subsidiary.create!(name: 'Splinter alugueis', cnpj: '444.444.444/0004-44', 
-                       address: 'Av. esgostos de Nova York, n 4000')
+                       address: 'Av. Esgotos de Nova York, 4000')
 
-    #Act
+    # Act
     visit root_path
     click_on 'Filiais'
 
     # Assert
     expect(current_path).to eq subsidiaries_path
     expect(page).to have_content('Joao alugueis')
+    expect(page).to have_content('Rua dos bobos, n 0')
     expect(page).to have_content('Splinter alugueis')
+    expect(page).to have_content('Av. Esgotos de Nova York, 4000')
   end
 
   scenario 'and no subsidiaries are created' do

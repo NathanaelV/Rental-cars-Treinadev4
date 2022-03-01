@@ -1,6 +1,9 @@
+<h1>Filiais</h1>
+
 <% if @subsidiaries.any? %>
   <% @subsidiaries.each do |subsidiary| %>
-    <%= link_to subsidiary.name, subsidiary %>
+    <h3><%= link_to subsidiary.name, subsidiary %></h3>
+    <p><%= subsidiary.address %></p>
   <% end %>
 <% else %>
   <%= 'Nenhuma filial cadastrada' %>
