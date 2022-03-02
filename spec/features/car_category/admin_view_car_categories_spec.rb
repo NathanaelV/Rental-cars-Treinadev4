@@ -56,7 +56,7 @@ feature 'Admin view car categories' do
     expect(current_path).to eq root_path
   end
 
-  scenario 'and return to manufacturers page' do
+  scenario 'and return to categories page' do
     CarCategory.create!(name: 'Top', daily_rate: 105.5, car_insurance: 58.5,
                         third_party_insurance: 10.5)
     
