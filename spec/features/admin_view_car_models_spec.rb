@@ -27,14 +27,14 @@ feature 'Admin view car model' do
 
   scenario 'and view details' do
     car_category = CarCategory.create!(name: 'Top', daily_rate: 200,
-      car_insurance: 50, 
-      third_party_insurance: 20)
+                                       car_insurance: 50, 
+                                       third_party_insurance: 20)
     CarModel.create!(name: 'Ka', year: 2020, manufacturer: 'Ford', 
-    motorization: '1.0', car_category: car_category, 
-    fuel_type: 'Flex')
+                     motorization: '1.0', car_category: car_category, 
+                     fuel_type: 'Flex')
     CarModel.create!(name: 'Onix', year: 2021, manufacturer: 'Chevrolet',
-    motorization: '1.0', car_category: car_category,
-    fuel_type: 'Flex')
+                     motorization: '1.0', car_category: car_category,
+                     fuel_type: 'Flex')
 
     visit root_path
     click_on 'Modelos de carro'
@@ -56,11 +56,26 @@ feature 'Admin view car model' do
     click_on 'Modelos de carro'
 
     expect(page).to have_content('Nenhum modelo de carro cadastrado')
-    expect(page).to have_link('Voltar', href: car_models_path)
   end
 
-  xscenario 'and category is a link' do
+  scenario 'and category is a link' do
     'No Show, categoria dever ser um link'
+    car_category = CarCategory.create!(name: 'Top', daily_rate: 200,
+                                       car_insurance: 50, 
+                                       third_party_insurance: 20)
+    CarModel.create!(name: 'Ka', year: 2020, manufacturer: 'Ford', 
+                     motorization: '1.0', car_category: car_category, 
+                     fuel_type: 'Flex')
+
+    visit root_path
+    click_on 'Modelos de carro'
+    click_on 'Ka - 2020'
+    click_on 'Top'
+
+    expect(page).to have_content('Top')
+    expect(page).to have_content('R$ 200,00')
+    expect(page).to have_content('R$ 50,00')
+    expect(page).to have_content('R$ 20,00')
   end
 end
 

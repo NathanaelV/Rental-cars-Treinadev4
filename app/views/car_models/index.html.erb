@@ -1,14 +1,18 @@
 <h1>Modelos de carro</h1>
 
-<% @car_models.each do |car_model| %>
-  <div>
-    <h3><%= link_to "#{car_model.name} - #{car_model.year}",
-            car_model %></h3>
-    <ul>
-      <li><%= car_model.manufacturer %>
-      <li><%= car_model.car_category.name %>
-    </ul>
-  </div>
+<% if @car_models.any? %>
+  <% @car_models.each do |car_model| %>
+    <div>
+      <h3><%= link_to "#{car_model.name} - #{car_model.year}",
+              car_model %></h3>
+      <ul>
+        <li><%= car_model.manufacturer %>
+        <li><%= car_model.car_category.name %>
+      </ul>
+    </div>
+  <% end %>
+<% else %>
+  <%= 'Nenhum modelo de carro cadastrado' %>
 <% end %>
 
 <%= link_to 'Voltar', root_path %>
