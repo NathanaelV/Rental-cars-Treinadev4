@@ -1,5 +1,7 @@
 <h1>Modelos de carro</h1>
 
+<%= link_to 'Registrar um modelo de carro', new_car_model_path %>
+
 <% if @car_models.any? %>
   <% @car_models.each do |car_model| %>
     <div>

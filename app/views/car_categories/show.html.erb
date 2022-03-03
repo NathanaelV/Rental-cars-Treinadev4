@@ -8,6 +8,20 @@
   <dd><%= number_to_currency @car_category.third_party_insurance %></dd>
 </dl>
 
+<% @car_category.car_models.each do |car_model| %>
+  <h3><%= "#{car_model.name} - #{car_model.year}" %></h3>
+  <dl>
+    <dt><%= CarModel.human_attribute_name :manufacturer %></dt>
+    <dd><%= car_model.manufacturer %></dd>
+    <dt><%= CarModel.human_attribute_name :motorization %></dt>
+    <dd><%= car_model.motorization %></dd>
+    <dt><%= CarModel.human_attribute_name :car_category %></dt>
+    <dd><%= car_model.car_category.name %></dd>
+    <dt><%= CarModel.human_attribute_name :fuel_type %></dt>
+    <dd><%= car_model.fuel_type %></dd>
+  </dl>
+<% end %>
+
 <%= link_to "Voltar", car_categories_path %>
 
 <%= link_to 'Editar', edit_car_category_path(@car_category) %>
