@@ -13,7 +13,7 @@ feature 'Admin register car model' do
     fill_in 'Fabricante', with: 'Ford'
     fill_in 'Motorização', with: '1.0'
     select 'Top', from: 'Categoria do carro'
-    fill_in 'Tipo de combustível', with: 'Flex'
+    select 'Flex', from: 'Tipo de combustível'
     click_on 'Enviar'
 
     expect(page).to have_content('Ka')
