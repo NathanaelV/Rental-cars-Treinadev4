@@ -5,10 +5,11 @@ feature 'Admin register valid car category' do
     visit root_path
     click_on 'Categorias'
     click_on 'Registrar uma nova categoria'
-    fill_in 'Nome', with: ''
-    fill_in 'Diária', with: ''
-    fill_in 'Seguro do carro', with: ''
-    fill_in 'Seguro para terceiros', with: ''
+    # Não precisa preencher com valor em branco, pois o formulário já está com valor em branco
+    # fill_in 'Nome', with: ''
+    # fill_in 'Diária', with: ''
+    # fill_in 'Seguro do carro', with: ''
+    # fill_in 'Seguro para terceiros', with: ''
     click_on 'Enviar'
 
     expect(CarCategory.count).to eq 0
